@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Listings</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .doctor { border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Doctors</h1>
+
+    <form method="GET" action="/listings">
+        <input type="text" name="name" placeholder="name" value="<%= name|| '' %>">
+        <input type="text" name="experience" placeholder="experience" value="<%= experience || '' %>">
+        <button type="submit">Search</button>
+    </form>
+
+    <% doctors.forEach(doctor => { %>
+        <div class="doctor">
+            <h2>name: <%= doctor.name %></h2>
+            <p>Experience: <%= doctor.experience %> years</p>
+            <a href="/profile/<%= doctor.id %>">View Profile</a>
+        </div>
+    <% }) %>
+</body>
+</html>

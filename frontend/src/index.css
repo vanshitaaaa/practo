@@ -840,4 +840,103 @@
 .login-btn:hover {
   background-color: #0056b3;
 }
+/* 🔹 NAVBAR STYLING */
+.navbar {
+  background-color: #0077b6;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar .logo {
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.login-btn {
+  background-color: #ffffff;
+  color: #0077b6;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #005b8f;
+  color: white;
+}
+
+/* 🔹 AUTH FORM CONTAINER */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* 🔹 FORM STYLING */
+.auth-form {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.auth-form h2 {
+  margin-bottom: 20px;
+  color: #0077b6;
+}
+
+/* 🔹 INPUT FIELDS */
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* 🔹 BUTTONS */
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0077b6;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-form button:hover {
+  background-color: #005b8f;
+}
+
+/* 🔹 LINK TO SIGNUP / LOGIN */
+.auth-form p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.auth-form a {
+  color: #0077b6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-form a:hover {
+  text-decoration: underline;
+}
 

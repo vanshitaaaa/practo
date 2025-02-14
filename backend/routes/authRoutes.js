@@ -150,5 +150,5 @@ router.get("/me", protect, async (req, res) => {
   res.json(req.user); // The protect middleware already fetched user data
 });
 
-module.exports = router; // ✅ Exporting in CommonJS format
+module.exports = router; //  Exporting in CommonJS format
 

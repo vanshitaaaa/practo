@@ -5,7 +5,9 @@ import DoctorList from './pages/DoctorList';
 import PatientStory from "./pages/PatientStory";
 import BookingAppointment from './pages/BookingAppointment';
 import React from "react";
-//import LoginSignup from './pages/Login';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
@@ -19,8 +21,11 @@ function App() {
                 <Route path="/search" element={<SearchPage />} />
                 <Route path='/doctorlist' element={<DoctorList />}/>
                 <Route path="/doctors/:doctorId" element={<PatientStory />} /> 
-                <Route path="/book-appointment/:doctorId" element={<BookingAppointment />} />
-
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route element={<PrivateRoute />}></Route>
+                   <Route path="/book-appointment/:doctorId" element={<BookingAppointment />} />
+                <Route/>
                 
                 
             </Routes>

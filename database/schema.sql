@@ -34,20 +34,6 @@ CREATE TABLE doctor_clinic (
     FOREIGN KEY (doctor_id) REFERENCES doctors(id) ON DELETE CASCADE,
     FOREIGN KEY (clinic_id) REFERENCES clinics(id) ON DELETE CASCADE
 );
-
-CREATE TABLE keywords (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    keyword VARCHAR(255) UNIQUE NOT NULL
-);
-
-CREATE TABLE doctor_keywords (
-    doctor_id INT,
-    keyword_id INT,
-    PRIMARY KEY (doctor_id, keyword_id),
-    FOREIGN KEY (doctor_id) REFERENCES doctors(id) ON DELETE CASCADE,
-    FOREIGN KEY (keyword_id) REFERENCES keywords(id) ON DELETE CASCADE
-);
-
 CREATE TABLE patient_stories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     doctor_id INT,
@@ -57,7 +43,6 @@ CREATE TABLE patient_stories (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (doctor_id) REFERENCES doctors(id) ON DELETE CASCADE
 );
-
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
@@ -67,4 +52,6 @@ CREATE TABLE users (
   is_verified BOOLEAN DEFAULT FALSE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
 

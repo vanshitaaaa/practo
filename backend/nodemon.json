@@ -1,0 +1,6 @@
+{
+    "watch": ["server.js", "../frontend/dist"],
+    "ext": "js,json",
+    "ignore": ["../frontend/node_modules"]
+  }
+  

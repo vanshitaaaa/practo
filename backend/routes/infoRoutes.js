@@ -74,9 +74,9 @@ const pool = require("../config/db.js"); // MySQL connection pool
 router.get('/', async (req, res) => {
     try {
         const { query, location } = req.query; // Get category and location from query params
-
+        console.log("=====");
         let sqlQuery = `
-            SELECT d.id, d.name, d.experience, d.rating, 
+            SELECT d.id, d.name, d.experience, d.rating,
                    l.name AS location, c.name AS clinic_name, c.address AS clinic_address,
                    COUNT(ps.id) AS story_count
             FROM doctors d
@@ -164,11 +164,11 @@ router.get('/', async (req, res) => {
 router.get('/:doctorId', async (req, res) => {
     try {
         const { doctorId } = req.params;
-
+        console.log("=====");
         // Query to fetch doctor details along with patient stories
         const query = `
             SELECT 
-                d.id AS doctor_id, d.name AS doctor_name, d.experience, d.rating, 
+                d.id AS doctor_id, d.name AS doctor_name, d.experience, d.rating,
                 l.name AS location, c.name AS clinic_name, c.address AS clinic_address,
                 ps.id AS story_id, ps.patient_name, ps.story, ps.rating AS story_rating
             FROM doctors d

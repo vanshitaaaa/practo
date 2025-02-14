@@ -21,7 +21,6 @@ const DoctorCard = ({ doctor , hideBookButton, hidePatientStories}) => {
       onClick={handleCardClick} 
       style={{ cursor: "pointer" }}>
       <img src={doctor.image} alt={doctor.name} className="doctor-image" />
-
       <div className="doctor-info">
       <h3>{doctor.name}</h3>
       <p>Experience: {doctor.experience} years</p>

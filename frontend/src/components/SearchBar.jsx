@@ -159,7 +159,7 @@ const SearchBar = () => {
 
   return (
     <div className="search-container">
-      {/* Search Input */}
+     
       <div className="search-input-wrapper">
         <Search className="search-icon" />
         <input 
@@ -182,7 +182,7 @@ const SearchBar = () => {
         )}
       </div>
 
-      {/* Location Input */}
+     
       <div className="location-input-wrapper">
         <MapPin className="location-icon" />
         <input 
@@ -214,3 +214,75 @@ const SearchBar = () => {
 
 export default SearchBar;
 
+/*import React, { useState, useEffect, useContext } from "react";
+import { Search, MapPin, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../pages/AuthContext";
+
+const SearchBar = () => {
+  const [query, setQuery] = useState("");
+  const [location, setLocation] = useState("");
+  const [showQuerySuggestions, setShowQuerySuggestions] = useState(false);
+  const [showLocationSuggestions, setShowLocationSuggestions] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  
+  const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+
+  const handleSearch = () => {
+    if (!query) return;
+    if (isClient) {
+      navigate(`/doctorlist?query=${encodeURIComponent(query)}&location=${encodeURIComponent(location)}`);
+    }
+  };
+
+  return (
+    <div className="search-container">
+      <div className="search-input-wrapper">
+        <Search className="search-icon" />
+        <input 
+          type="text"
+          placeholder="Search doctors, clinics, hospitals..."
+          className="search-input"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onFocus={() => setShowQuerySuggestions(true)}
+          onBlur={() => setTimeout(() => setShowQuerySuggestions(false), 200)}
+        />
+      </div>
+
+      <div className="location-input-wrapper">
+        <MapPin className="location-icon" />
+        <input 
+          type="text"
+          placeholder="Location"
+          className="location-input"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          onFocus={() => setShowLocationSuggestions(true)}
+          onBlur={() => setTimeout(() => setShowLocationSuggestions(false), 200)}
+        />
+      </div>
+
+      <button onClick={handleSearch} className="search-button">Search</button>
+      
+      {user ? (
+        <button onClick={logout} className="auth-button">Logout</button>
+      ) : (
+        <button onClick={handleLoginClick} className="auth-button">
+          <User className="auth-icon" /> Login / Signup
+        </button>
+      )}
+    </div>
+  );
+};
+
+export default SearchBar;*/

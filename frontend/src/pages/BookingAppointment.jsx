@@ -66,6 +66,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import DoctorCard from "../components/DoctorCard";
+import NavBar from "../components/NavBar";
 
 const BookingAppointment = () => {
     const { doctorId } = useParams();
@@ -90,6 +91,7 @@ const BookingAppointment = () => {
         };
         fetchDoctor();
     }, [doctorId]);
+    const availableSlots = ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM", "6:00 PM"];
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -104,10 +106,19 @@ const BookingAppointment = () => {
     if (!doctor) return <p>Loading doctor details...</p>;
 
     return (
+        <div className="book-container">
+
+       <NavBar/>
         <div className="booking-container">
+        
             {/* Doctor Card Section */}
             <div className="doctor-card-container">
             <DoctorCard doctor={doctor} hideBookButton={true} hidePatientStories={true}/>
+            <div>
+                {availableSlots.map((slot) => (
+                    <button className="booking-button" key={slot} onClick={() => setSelectedSlot(slot)}>{slot}</button>
+                ))}
+            </div>
 
             </div>
 
@@ -136,6 +147,7 @@ const BookingAppointment = () => {
                     <button type="submit">Confirm Appointment</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 };

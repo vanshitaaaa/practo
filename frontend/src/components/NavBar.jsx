@@ -42,14 +42,35 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    /*<nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
+     
         <div className="logo">Practo</div>
 
-        {/* Login / Logout Button */}
+       
         {isLoggedIn ? (
           <button className="login-btn" onClick={handleLogout}>Logout</button>
+        ) : (
+          <Link to="/login">
+            <button className="login-btn">Login / Sign Up</button>
+          </Link>
+        )}
+      </div>
+    </nav>*/
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="logo">
+          <img src="/practo-logo.svg" alt="Practo" />
+        </div>
+        <div className="nav-links">
+          <p>Find Doctors</p>
+          <p>Video Consult</p>
+          <p >Surgeries</p>
+        </div>
+        {isLoggedIn ? (
+          <button className="login-btn" onClick={handleLogout}>
+            Logout
+          </button>
         ) : (
           <Link to="/login">
             <button className="login-btn">Login / Sign Up</button>

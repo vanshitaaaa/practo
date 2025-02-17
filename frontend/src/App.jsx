@@ -11,6 +11,7 @@ import PrivateRoute from './components/PrivateRoute';
 
 
 
+
 function App() {
 
 
@@ -26,7 +27,6 @@ function App() {
                 <Route element={<PrivateRoute />}></Route>
                    <Route path="/book-appointment/:doctorId" element={<BookingAppointment />} />
                 <Route/>
-                
                 
             </Routes>
 

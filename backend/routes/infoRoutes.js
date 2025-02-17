@@ -74,7 +74,7 @@ const pool = require("../config/db.js"); // MySQL connection pool
 router.get('/', async (req, res) => {
     try {
         const { query, location } = req.query; // Get category and location from query params
-        console.log("=====");
+        console.log(query);
         let sqlQuery = `
             SELECT d.id, d.name, d.experience, d.rating,
                    l.name AS location, c.name AS clinic_name, c.address AS clinic_address,
@@ -209,8 +209,18 @@ router.get('/:doctorId', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-
-
+/*app.get('/api/slots/:doctorId', async (req, res) => {
+    const { doctorId } = req.params;
+    const query = `SELECT * FROM slots WHERE doctor_id = ? AND is_available = TRUE`;
+    
+    try {
+        const [slots] = await db.execute(query, [doctorId]);
+        res.json(slots);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error fetching slots" });
+    }
+});*/
 
 
 module.exports = router;
